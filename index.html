@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Growcred Finance — Trusted Loan Assistance</title>
+  <meta name="description" content="Growcred Finance | Personal, Business & Home Loans — Easy documentation, fast approvals, trusted guidance." />
+  <!-- Tailwind CDN for quick styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .brand-green { --tw-bg-opacity: 1; background-color: rgba(16,185,129,var(--tw-bg-opacity)); }
+    .brand-dark { color: #064e3b; }
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(6px); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
+  <header class="shadow-sm bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+          <rect width="24" height="24" rx="6" class="brand-green"/>
+          <path d="M7 13.5L10 9l4 6 3-4" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <div class="text-lg font-semibold">Growcred Finance</div>
+          <div class="text-xs text-gray-500">Trusted Loan Assistance</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-6 items-center text-sm">
+        <a href="#services" class="hover:text-green-600">Services</a>
+        <a href="#process" class="hover:text-green-600">How it works</a>
+        <a href="#docs" class="hover:text-green-600">Documents</a>
+        <a href="#contact" class="hover:text-green-600">Contact</a>
+      </nav>
+      <div class="hidden md:block">
+        <a href="#contact" class="inline-block px-4 py-2 rounded-lg bg-green-500 text-white text-sm">Apply Now</a>
+      </div>
+      <button id="navToggle" class="md:hidden">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#064e3b" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="mobileNav" class="hidden md:hidden bg-white border-t">
+      <div class="px-6 py-3 flex flex-col gap-2">
+        <a href="#services" class="py-2">Services</a>
+        <a href="#process" class="py-2">How it works</a>
+        <a href="#docs" class="py-2">Documents</a>
+        <a href="#contact" class="py-2">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="mt-8">
+    <section class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="py-6">
+        <h1 class="text-3xl md:text-4xl font-extrabold brand-dark">Growcred Finance</h1>
+        <p class="mt-4 text-gray-600">Personal • Business • Home Loans — <strong>Easy Documentation</strong> • <strong>Fast Approvals</strong> • <strong>Trusted Guidance</strong></p>
+
+        <ul class="mt-6 space-y-2 text-sm text-gray-700">
+          <li>✔ Minimal paperwork, guided end-to-end</li>
+          <li>✔ Competitive interest rates & transparent fees</li>
+          <li>✔ Dedicated relationship managers</li>
+        </ul>
+
+        <div class="mt-6 flex gap-3">
+          <a href="#contact" class="px-4 py-2 rounded-lg bg-green-500 text-white">Apply Now</a>
+          <a href="#services" class="px-4 py-2 rounded-lg border">Our Services</a>
+        </div>
+
+        <div class="mt-6 text-xs text-gray-500">
+          <div>Contact: <a href="tel:+91 9827161737" class="text-green-600">+91-9827161737</a> • Email: <a href="mailto:shivamshivvedi@outlook.com" class="text-green-600">shivamshivvedi@outlook.com </a></div>
+        </div>
+      </div>
+
+      <div class="p-6">
+        <div class="glass rounded-2xl p-6 shadow">
+          <h3 class="text-lg font-semibold">Quick Eligibility Check</h3>
+          <p class="text-sm text-gray-600 mt-2">Fill basic details and we will call you with options.</p>
+          <form id="quickForm" class="mt-4 space-y-3">
+            <div>
+              <label class="text-xs text-gray-600">Name</label>
+              <input required name="name" class="w-full mt-1 p-2 rounded border" placeholder="Your name" />
+            </div>
+            <div>
+              <label class="text-xs text-gray-600">Mobile</label>
+              <input required name="phone" pattern="[0-9]{10}" class="w-full mt-1 p-2 rounded border" placeholder="10-digit mobile" />
+            </div>
+            <div>
+              <label class="text-xs text-gray-600">Loan Type</label>
+              <select name="loanType" class="w-full mt-1 p-2 rounded border">
+                <option>Personal Loan</option>
+                <option>Business Loan</option>
+                <option>Home Loan</option>
+                <option>Car Loan</option>
+                <option>MSME Loan</option>
+              </select>
+            </div>
+            <div class="flex gap-3">
+              <button type="submit" class="flex-1 px-4 py-2 rounded-lg bg-green-600 text-white">Get Call Back</button>
+              <button type="button" id="clearBtn" class="flex-1 px-4 py-2 rounded-lg border">Clear</button>
+            </div>
+            <p id="formMsg" class="text-sm text-green-700 hidden">Thanks — we will call you within 24 hours.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="max-w-5xl mx-auto px-6 mt-12">
+      <h2 class="text-2xl font-bold brand-dark">Our Services</h2>
+      <p class="text-gray-600 mt-2">Comprehensive finance solutions for individuals and businesses.</p>
+
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="p-4 rounded-lg border bg-white">
+          <h3 class="font-semibold">Personal Loan</h3>
+          <p class="text-sm text-gray-600 mt-2">Quick disbursal for personal needs with flexible tenures.</p>
+        </article>
+        <article class="p-4 rounded-lg border bg-white">
+          <h3 class="font-semibold">Business Loan</h3>
+          <p class="text-sm text-gray-600 mt-2">Working capital & expansion loans for small & medium businesses.</p>
+        </article>
+        <article class="p-4 rounded-lg border bg-white">
+          <h3 class="font-semibold">Home Loan</h3>
+          <p class="text-sm text-gray-600 mt-2">Low interest long-tenure options & balance transfer help.</p>
+        </article>
+        <article class="p-4 rounded-lg border bg-white">
+          <h3 class="font-semibold">Car Loan</h3>
+          <p class="text-sm text-gray-600 mt-2">Quick approval with competitive EMI plans.</p>
+        </article>
+        <article class="p-4 rounded-lg border bg-white">
+          <h3 class="font-semibold">MSME Loan</h3>
+          <p class="text-sm text-gray-600 mt-2">Government schemes & bank-linked finance support.</p>
+        </article>
+        <article class="p-4 rounded-lg border bg-white">
+          <h3 class="font-semibold">Credit Card Assistance</h3>
+          <p class="text-sm text-gray-600 mt-2">Help to get the right card and approvals.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="max-w-5xl mx-auto px-6 mt-12">
+      <h2 class="text-2xl font-bold brand-dark">How it works</h2>
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-4 bg-white rounded-lg border">
+          <h4 class="font-semibold">1. Apply</h4>
+          <p class="text-sm text-gray-600 mt-2">Fill quick form or contact us with details.</p>
+        </div>
+        <div class="p-4 bg-white rounded-lg border">
+          <h4 class="font-semibold">2. Document Verification</h4>
+          <p class="text-sm text-gray-600 mt-2">We check eligibility and prepare papers for submission.</p>
+        </div>
+        <div class="p-4 bg-white rounded-lg border">
+          <h4 class="font-semibold">3. Approval & Disbursal</h4>
+          <p class="text-sm text-gray-600 mt-2">Fast approvals & smooth disbursal process.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="docs" class="max-w-5xl mx-auto px-6 mt-12">
+      <h2 class="text-2xl font-bold brand-dark">Required Documents (Common)</h2>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <ul class="list-disc pl-5 text-gray-700">
+          <li>Identity proof (Aadhaar / PAN)</li>
+          <li>Address proof (Aadhaar / Voter / Passport)</li>
+          <li>Income proof (Salary slip / Bank statements)</li>
+        </ul>
+        <ul class="list-disc pl-5 text-gray-700">
+          <li>Business proof (for business loans)</li>
+          <li>Property documents (for home loans)</li>
+          <li>Passport size photograph</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="max-w-5xl mx-auto px-6 mt-12 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div>
+          <h2 class="text-2xl font-bold brand-dark">Get in touch</h2>
+          <p class="text-gray-600 mt-2">Want a call back? Send your details and our team will contact you.</p>
+
+          <div class="mt-6 text-sm text-gray-700 space-y-3">
+            <div><strong>Phone:</strong> <a href="tel:+91 9827161737" class="text-green-600">+91-9827161737</a></div>
+            <div><strong>Email:</strong> <a href="mailto:shivamshivvedi@outlook.com" class="text-green-600">shivamshivvedi@outlook.com </a></div>
+            <div><strong>Office:</strong> Chhindwara (MP) — Growcred Finance</div>
+          </div>
+        </div>
+
+        <form id="contactForm" class="p-6 bg-white rounded-lg border shadow-sm">
+          <div class="grid grid-cols-1 gap-3">
+            <input required name="name" placeholder="Name" class="p-2 border rounded" />
+            <input required name="phone" pattern="[0-9]{10}" placeholder="Mobile (10 digits)" class="p-2 border rounded" />
+            <input name="email" placeholder="Email (optional)" class="p-2 border rounded" />
+            <select name="service" class="p-2 border rounded">
+              <option>Personal Loan</option>
+              <option>Business Loan</option>
+              <option>Home Loan</option>
+              <option>Car Loan</option>
+              <option>MSME Loan</option>
+            </select>
+            <textarea name="message" rows="3" placeholder="Short message (optional)" class="p-2 border rounded"></textarea>
+            <div class="flex gap-3">
+              <button type="submit" class="flex-1 px-4 py-2 rounded-lg bg-green-600 text-white">Send Request</button>
+              <button type="button" id="resetContact" class="flex-1 px-4 py-2 rounded-lg border">Reset</button>
+            </div>
+            <p id="contactMsg" class="text-sm text-green-700 hidden">Request sent. We'll contact you soon.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-white border-t">
+    <div class="max-w-5xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+      <div>&copy; <span id="year"></span> Growcred Finance — All rights reserved.</div>
+      <div class="mt-3 md:mt-0">Made with ❤️ • <a href="#" class="text-green-600">Terms</a> • <a href="#" class="text-green-600">Privacy</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Small UI interactions
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    navToggle?.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+
+    // Quick form
+    document.getElementById('quickForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('formMsg').classList.remove('hidden');
+      setTimeout(() => document.getElementById('formMsg').classList.add('hidden'), 4000);
+      e.target.reset();
+    });
+    document.getElementById('clearBtn')?.addEventListener('click', () => document.getElementById('quickForm').reset());
+
+    // Contact form
+    document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('contactMsg').classList.remove('hidden');
+      setTimeout(() => document.getElementById('contactMsg').classList.add('hidden'), 4000);
+      e.target.reset();
+    });
+    document.getElementById('resetContact')?.addEventListener('click', () => document.getElementById('contactForm').reset());
+  </script>
+</body>
+</html>
